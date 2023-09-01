@@ -57,4 +57,11 @@ class Snake:
         # add a new segment to the snake
         self.add_segment(x=self.segments[-1].xcor(),y=self.segments[-1].ycor())
 
-
+    def reset(self):
+        # reset the snake
+        for seg in self.segments:
+            seg.color("black")
+            seg.goto(1000,1000)
+        self.segments.clear()
+        self.create_snake()
+        self.head = self.segments[0]
